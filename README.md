@@ -20,17 +20,17 @@ This project processes binary images to extract regions, compute distances betwe
 ```
 .
 ├── src/
-│ ├── init.py # Marks the folder as a Python package
-│ ├── binary_mask.py # Handles binary mask creation
-│ ├── region_processing.py # Extracts and processes image regions
-│ ├── analysis.py # Performs distance computation and analysis
-│ ├── visualization.py # Visualizes results
-│ └── main.py # Entry point for the project
+│   ├── __init__.py               # Marks the folder as a Python package
+│   ├── binary_mask.py            # Handles binary mask creation
+│   ├── region_processing.py      # Extracts and processes image regions
+│   ├── analysis.py               # Performs distance computation and analysis
+│   ├── visualization.py          # Visualizes results
+│   └── main.py                   # Entry point for the project
 ├── data/
-│ ├── example_image.tif # Example input image
-│ ├── results/ # Output directory for visualizations
-├── requirements.txt # Dependencies
-└── README.md # Project overview and usage
+│   ├── example_image.tif         # Example input image
+│   ├── results/                  # Output directory for visualizations
+├── requirements.txt              # Dependencies
+└── README.md                     # Project overview and usage
 ```
 
 ---
@@ -45,8 +45,18 @@ Ensure you have Python 3.8 or higher installed.
 
 Create a virtual environment and install required packages:
 
+#### Using pip
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
+
+#### Using Conda
+```bash
+conda create -n image_analysis python=3.8 -y
+conda activate image_analysis
+pip install -r requirements.txt
+
+
+
