@@ -17,30 +17,21 @@ This project processes binary images to extract regions, compute distances betwe
 
 ## Project Structure
 
+```
 .
 ├── src/
-
 │ ├── init.py # Marks the folder as a Python package
-
 │ ├── binary_mask.py # Handles binary mask creation
-
 │ ├── region_processing.py # Extracts and processes image regions
-
 │ ├── analysis.py # Performs distance computation and analysis
-
 │ ├── visualization.py # Visualizes results
-
 │ └── main.py # Entry point for the project
-
 ├── data/
-
 │ ├── example_image.tif # Example input image
-
 │ ├── results/ # Output directory for visualizations
-
 ├── requirements.txt # Dependencies
-
 └── README.md # Project overview and usage
+```
 
 ---
 
