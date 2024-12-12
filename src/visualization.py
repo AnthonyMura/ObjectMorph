@@ -2,7 +2,13 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 import numpy as np
 
-def plot_results(region: dict, distances: np.ndarray, contour_points: np.ndarray, max_bin_value: float) -> plt.Figure:
+
+def plot_results(
+    region: dict,
+    distances: np.ndarray,
+    contour_points: np.ndarray,
+    max_bin_value: np.float32,
+) -> plt.Figure:
     """
     Creates plots for a region's mask and distance histogram.
 
@@ -10,7 +16,7 @@ def plot_results(region: dict, distances: np.ndarray, contour_points: np.ndarray
         region (dict): Region properties.
         distances (np.ndarray): Pairwise distances.
         contour_points (np.ndarray): Contour points.
-        max_bin_value (float): Maximum bin value.
+        max_bin_value (np.float32): Maximum bin value.
 
     Returns:
         plt.Figure: The created figure.
@@ -23,7 +29,9 @@ def plot_results(region: dict, distances: np.ndarray, contour_points: np.ndarray
     object_cnt_ax.set_title("Object Contour")
 
     hist_ax = f.add_subplot(1, 2, 2)
-    sns.histplot(distances, bins=100, ax=hist_ax, edgecolor="black", stat="density", kde=True)
+    sns.histplot(
+        distances, bins=100, ax=hist_ax, edgecolor="black", stat="density", kde=True
+    )
     hist_ax.set_title(f"Distance Histogram\nMax bin value: {max_bin_value.round(2)}")
 
     patches = hist_ax.patches

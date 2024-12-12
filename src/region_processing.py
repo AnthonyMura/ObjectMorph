@@ -4,6 +4,7 @@ from skimage.morphology import remove_small_objects
 import numpy as np
 import pandas as pd
 
+
 def extract_regions(binary_mask: np.ndarray, min_size: int = 0) -> list[dict[str, Any]]:
     """
     Extract connected regions from a binary mask using skimage.
@@ -27,11 +28,13 @@ def extract_regions(binary_mask: np.ndarray, min_size: int = 0) -> list[dict[str
         cnts = np.vstack(cnts)
         cnts = pd.DataFrame(cnts[:, ::-1], columns=["x", "y"])
 
-        regions.append({
-            "label": region.label,
-            "mask": region_mask,
-            "area": region.area,
-            "object_contour": cnts,
-        })
+        regions.append(
+            {
+                "label": region.label,
+                "mask": region_mask,
+                "area": region.area,
+                "object_contour": cnts,
+            }
+        )
 
     return sorted(regions, key=lambda r: r["area"], reverse=True)

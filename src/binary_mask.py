@@ -2,6 +2,7 @@ from pathlib import Path
 import numpy as np
 import cv2
 
+
 def get_binary_mask(image_path: Path) -> np.ndarray:
     """
     Converts an image to a binary mask using Otsu's thresholding.

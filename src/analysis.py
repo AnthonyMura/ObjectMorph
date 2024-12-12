@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def compute_distances(contour_points: np.ndarray) -> np.ndarray:
     """
     Computes pairwise distances between points in a contour.
@@ -17,6 +18,7 @@ def compute_distances(contour_points: np.ndarray) -> np.ndarray:
     distances = np.sqrt(squared_distances)
     distances = np.triu(distances).reshape(-1)
     return distances[distances != 0]
+
 
 def analyze_distances(distances: np.ndarray, bins: int = 100):
     """
